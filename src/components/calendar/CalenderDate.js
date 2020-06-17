@@ -34,11 +34,18 @@ const CalendarDate = ({ moment }) => {
     let endIndex = 7 + startIndex;
     calendarArr.push(totalDateArr.slice(startIndex, endIndex));
   }
+  console.log(calendarArr);
 
   return (
-    <div>
-      
-    </div>
+    <table>
+      <tbody>
+      {calendarArr.map((dateArr, index) => {
+        return (
+            <tr key={index}>{dateArr.map(date => <td key={date}>{date}</td>)}</tr>
+        )
+      })}
+      </tbody>
+    </table>
   );
 };
 
